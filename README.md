@@ -308,7 +308,7 @@ cd web && mvn clean package
 | Member | GitHub | Area | Responsibilities |
 |---|---|---|---|
 | **Muhammad Abuzar Thanvi** | [@abuzarthanvi25](https://github.com/abuzarthanvi25) | Java + Interface | Servlets/JSP, login and roles, restaurant search, booking/cancellation screens, group responses, waiting-list screens, status dashboard |
-| **Muhammad Haroon Shahzad** | [@username](https://github.com/username) | Erlang/OTP | Supervised restaurant coordinators, table allocation, group holds, confirmations and expiry, waiting-list offers, worker restart and deadline recovery |
+| **Muhammad Haroon Shahzad** | [@HaroonMalik771](https://github.com/HaroonMalik771) | Erlang/OTP | Supervised restaurant coordinators, table allocation, group holds, confirmations and expiry, waiting-list offers, worker restart and deadline recovery |
 | **Ouballouk Mohamed** | [@username](https://github.com/username) | Persistence + Messaging | MySQL schema and transaction helpers, RabbitMQ request/reply, request deduplication, outbox publishing, Docker and multi-VM deployment |
 
 All three members review transaction correctness, concurrency tests, integration and the final report.
