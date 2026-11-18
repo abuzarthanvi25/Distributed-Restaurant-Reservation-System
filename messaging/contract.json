@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "command_exchange": "gatherseat.commands.v1",
+  "event_exchange": "gatherseat.events.v1",
+  "routing_key": "restaurant.<restaurant_id>",
+  "queue": "gatherseat.restaurant.<restaurant_id>",
+  "command_example": {
+    "version": 1,
+    "request_id": "8507ce97-8998-43d2-bd9f-990796f9bb7f",
+    "actor_id": 1,
+    "operation": "book",
+    "restaurant_id": 1,
+    "slot_id": 1,
+    "guests": 4
+  },
+  "reply_example": {
+    "request_id": "8507ce97-8998-43d2-bd9f-990796f9bb7f",
+    "code": "CONFIRMED",
+    "reservation_id": 1,
+    "table_id": 1
+  },
+  "event_example": {
+    "event_id": 1,
+    "type": "reservation.confirmed",
+    "restaurant_id": 1,
+    "slot_id": 1,
+    "reservation_id": 1,
+    "version": 1
+  }
+}
