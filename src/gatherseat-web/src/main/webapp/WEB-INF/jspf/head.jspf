@@ -1,0 +1,8 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:if test="${empty sessionScope.user}"><c:redirect url="/index.jsp"/></c:if>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf" content="<c:out value='${sessionScope.csrfToken}'/>">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/gs.css">
+<script defer src="${pageContext.request.contextPath}/assets/js/gs-core.js"></script>
+<script defer src="${pageContext.request.contextPath}/assets/js/gs-events.js"></script>

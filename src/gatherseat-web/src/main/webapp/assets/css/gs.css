@@ -1,0 +1,170 @@
+
+/* =========================================
+   1. Global variables
+========================================= */
+
+:root {
+    --primary: #3157d5;
+    --primary-dark: #2444b5;
+
+    --background: #f5f7fb;
+    --surface: #ffffff;
+
+    --text: #202638;
+    --muted: #737b8c;
+    --border: #e2e6ef;
+
+    --radius: 10px;
+    --shadow: 0 3px 12px rgba(20, 30, 60, 0.06);
+}
+
+/* =========================================
+   2. Reset and base styles
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   3. Main layout
+========================================= */
+
+.container {
+    width: min(1100px, 92%);
+    margin: 32px auto;
+}
+
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* =========================================
+   4. Navigation
+========================================= */
+
+.topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 16px 4%;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.topbar nav {
+    display: flex;
+    gap: 22px;
+}
+
+.topbar nav a {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.topbar nav a:hover {
+    color: var(--primary);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-right form {
+    margin: 0;
+}
+
+.conn {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================================
+   5. Generic cards
+========================================= */
+
+.card {
+    padding: 22px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+.card h2,
+.card h3 {
+    margin-top: 0;
+}
+
+/* =========================================
+   6. Responsive layout
+========================================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .topbar nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .topbar-right {
+        margin-left: auto;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+}

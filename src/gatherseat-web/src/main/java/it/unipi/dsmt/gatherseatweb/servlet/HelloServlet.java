@@ -1,4 +1,4 @@
-package it.unipi.dsmt.gatherseatweb;
+package it.unipi.dsmt.gatherseatweb.servlet;
 
 import java.io.*;
 
