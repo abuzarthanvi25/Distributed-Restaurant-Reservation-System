@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: gatherseat
+      MYSQL_USER: gatherseat
+      MYSQL_PASSWORD: ${GATHERSEAT_DB_PASSWORD:?Set GATHERSEAT_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${GATHERSEAT_DB_ROOT_PASSWORD:?Set GATHERSEAT_DB_ROOT_PASSWORD}
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/001_schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
+      - ./db/002_commands.sql:/docker-entrypoint-initdb.d/002_commands.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysql --protocol=TCP -h127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD gatherseat -e 'SELECT 1'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  rabbitmq:
+    image: rabbitmq:4.1-management
+    environment:
+      RABBITMQ_DEFAULT_USER: gatherseat
+      RABBITMQ_DEFAULT_PASS: ${GATHERSEAT_AMQP_PASSWORD:?Set GATHERSEAT_AMQP_PASSWORD}
+    ports:
+      - "127.0.0.1:5672:5672"
+    volumes:
+      - rabbit-data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "check_port_connectivity"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+volumes:
+  mysql-data:
+  rabbit-data:
