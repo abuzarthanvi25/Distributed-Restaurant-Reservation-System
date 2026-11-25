@@ -1,0 +1,21 @@
+<header class="topbar">
+    <a class="brand" href="restaurants.jsp">GatherSeat</a>
+    <nav aria-label="Main">
+        <a href="restaurants.jsp">Restaurants</a>
+        <a href="my-bookings.jsp">My bookings</a>
+    </nav>
+    <div class="topbar-right">
+        <span id="conn" class="conn" role="status">Socket Status: <span id="socket-status">Not connected</span></span>
+        <button type="button" id="bell" class="bell" aria-expanded="false" aria-controls="notif-panel">
+            Notifications <span id="bell-count" class="badge" hidden>0</span>
+        </button>
+        <form method="post" action="${pageContext.request.contextPath}/logout">
+            <input type="hidden" name="csrf" value="<c:out value='${sessionScope.csrfToken}'/>">
+            <button type="submit" class="link">Sign out</button>
+        </form>
+    </div>
+    <section id="notif-panel" class="panel" hidden aria-label="Notifications">
+        <ul id="notif-list"></ul>
+        <p id="notif-empty" class="muted">No notifications yet.</p>
+    </section>
+</header>
