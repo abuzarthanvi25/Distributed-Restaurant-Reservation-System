@@ -13,6 +13,7 @@
     --text: #202638;
     --muted: #737b8c;
     --border: #e2e6ef;
+    --success: #2c9654;
 
     --radius: 10px;
     --shadow: 0 3px 12px rgba(20, 30, 60, 0.06);
@@ -115,6 +116,11 @@ a:hover {
 .conn {
     color: var(--muted);
     font-size: 13px;
+}
+
+.socket-connected {
+    color: var(--success);
+    font-weight: bold;
 }
 
 /* =========================================

@@ -5,7 +5,7 @@
         <a href="my-bookings.jsp">My bookings</a>
     </nav>
     <div class="topbar-right">
-        <span id="conn" class="conn" role="status">Not connected</span>
+        <span id="conn" class="conn" role="status">Socket Status: <span id="socket-status">Not connected</span></span>
         <button type="button" id="bell" class="bell" aria-expanded="false" aria-controls="notif-panel">
             Notifications <span id="bell-count" class="badge" hidden>0</span>
         </button>
