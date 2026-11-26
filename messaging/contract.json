@@ -1,0 +1,33 @@
+
+{
+  "version": 1,
+  "command_exchange": "gatherseat.commands.v1",
+  "event_exchange": "gatherseat.events.v1",
+  "exchange_type": "topic",
+  "routing_key_pattern": "restaurant.<restaurant_id>",
+  "queue_pattern": "gatherseat.restaurant.<restaurant_id>",
+  "commands": {
+    "book": {
+      "request_id": "unique-request-id",
+      "operation": "book",
+      "actor_id": 1,
+      "restaurant_id": 1,
+      "slot_id": 1,
+      "guests": 2
+    },
+    "cancel": {
+      "request_id": "unique-cancel-request-id",
+      "operation": "cancel",
+      "actor_id": 1,
+      "restaurant_id": 1,
+      "slot_id": 1,
+      "reservation_id": 1
+    }
+  },
+  "reply_example": {
+    "request_id": "unique-request-id",
+    "code": "CONFIRMED",
+    "reservation_id": 1,
+    "table_id": 1
+  }
+}
